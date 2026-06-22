@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Grixis Reanimator SB Guide</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0d0d0d; color: #e0e0e0; font-size: 14px; }
+.top-bar { background: #111; padding: 14px 16px 10px; border-bottom: 1px solid #222; position: sticky; top: 0; z-index: 20; }
+.top-bar h1 { font-size: 16px; font-weight: 700; color: #b070a0; letter-spacing: 0.3px; }
+.top-bar .subtitle { font-size: 11px; color: #555; margin-top: 2px; }
+.mu { border-bottom: 1px solid #181818; }
+.mu-head { display: flex; align-items: center; padding: 13px 16px; cursor: pointer; -webkit-tap-highlight-color: transparent; user-select: none; gap: 10px; }
+.mu-head:active { background: #161616; }
+.mu-name { flex: 1; font-size: 15px; font-weight: 600; color: #e8e8e8; }
+.chev { color: #333; font-size: 11px; transition: transform 0.18s; }
+.mu.open .chev { transform: rotate(180deg); }
+.mu-body { display: none; padding: 0 12px 14px; }
+.mu.open .mu-body { display: block; }
+.gc { background: #141414; border: 1px solid #1f1f1f; border-radius: 7px; margin-bottom: 8px; overflow: hidden; }
+.gc-head { background: #191919; padding: 7px 11px; display: flex; align-items: center; gap: 8px; }
+.gc-author { font-size: 12px; font-weight: 600; color: #7090a0; }
+.gc-author.jpa { color: #b070a0; }
+.gc-author.ale { color: #50b090; }
+.gc-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 9px 11px; }
+.col-head { font-size: 10px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 5px; }
+.col-in .col-head { color: #4caf6b; }
+.col-out .col-head { color: #e05a5a; }
+.c { font-size: 12px; padding: 2px 0; line-height: 1.45; }
+.c.in { color: #b8e8c8; }
+.c.out { color: #f5b8b8; }
+.c .q { font-weight: 700; font-size: 11px; color: #e05a5a; margin-right: 3px; }
+.c .qi { font-weight: 700; font-size: 11px; color: #4caf6b; margin-right: 3px; }
+.gc-note { padding: 6px 11px 8px; border-top: 1px solid #1a1a1a; font-size: 11px; color: #999; font-style: italic; line-height: 1.55; }
+.gc-sub { padding: 4px 11px 0; font-size: 10px; color: #888; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+</style>
+</head>
+<body>
+<div class="top-bar">
+  <h1>Grixis Reanimator SB Guide</h1>
+  <div class="subtitle">JPA / Ale (Alejandro Mora)</div>
+</div>
+
+<!-- Boros/Mardu Energy -->
+<div class="mu open">
+  <div class="mu-head" onclick="this.parentElement.classList.toggle('open')">
+    <span class="mu-name">vs. Boros / Mardu Energy</span><span class="chev">&#9660;</span>
+  </div>
+  <div class="mu-body">
+    <div class="gc">
+      <div class="gc-head"><span class="gc-author jpa">JPA</span></div>
+      <div class="gc-cols">
+        <div class="col-in"><div class="col-head">IN</div>
+          <div class="c in"><span class="qi">2</span>Pyroclasm</div>
+        </div>
+        <div class="col-out"><div class="col-head">OUT</div>
+          <div class="c out"><span class="q">2</span>Thoughtseize</div>
+        </div>
+      </div>
+      <div class="gc-note">Spell Pierce stays in — answers Thraben Charm and protects Frog from removal. Thoughtseize lifeloss matters here. Vexing Bauble is an option (esp. on the draw) vs. Surgical/Solitude. Mardu's Nihil Spellbomb makes Meltdown tempting but probably not worth it. Punish their durdly hands with early removal — don't let them run away.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Belcher -->
+<div class="mu">
+  <div class="mu-head" onclick="this.parentElement.classList.toggle('open')">
+    <span class="mu-name">vs. Belcher</span><span class="chev">&#9660;</span>
+  </div>
+  <div class="mu-body">
+    <div class="gc">
+      <div class="gc-head"><span class="gc-author jpa">JPA</span></div>
+      <div class="gc-cols">
+        <div class="col-in"><div class="col-head">IN</div>
+          <div class="c in"><span class="qi">2</span>Mystical Dispute</div>
+          <div class="c in"><span class="qi">2</span>Vexing Bauble</div>
+          <div class="c in"><span class="qi">4</span>Consign to Memory</div>
+          <div class="c in"><span class="qi">1</span>Surgical Extraction</div>
+        </div>
+        <div class="col-out"><div class="col-head">OUT</div>
+          <div class="c out"><span class="q">4</span>Fatal Push</div>
+          <div class="c out"><span class="q">3</span>Abhorrent Oculus</div>
+          <div class="c out"><span class="q">2</span>Unearth</div>
+        </div>
+      </div>
+      <div class="gc-note">Unearth still useful to bring back a Spell Snared/Counterspelled Frog/Emperor. If they play Tamiyo, leave in some Fatal Pushes (also hits Tameshi w/ Revolt). Important: let Lotus Bloom hit the stack and Consign it there (goes to graveyard for Surgical). Otherwise Consign the trigger so it stays exiled forever — don't let Tameshi bring it back. Oculus is poor here due to all the bounce.</div>
+    </div>
+  </div>
+</div>
+
+<!-- UR Prowess -->
+<div class="mu">
+  <div class="mu-head" onclick="this.parentElement.classList.toggle('open')">
+    <span class="mu-name">vs. UR Prowess</span><span class="chev">&#9660;</span>
+  </div>
+  <div class="mu-body">
+    <div class="gc">
+      <div class="gc-head"><span class="gc-author jpa">JPA</span></div>
+      <div class="gc-cols">
+        <div class="col-in"><div class="col-head">IN</div>
+          <div class="c in"><span class="qi">2</span>Pyroclasm</div>
+          <div class="c in"><span class="qi">2</span>Vexing Bauble</div>
+        </div>
+        <div class="col-out"><div class="col-head">OUT</div>
+          <div class="c out"><span class="q">4</span>Thoughtseize</div>
+        </div>
+      </div>
+      <div class="gc-note">Positive matchup pre- and post-board. Bauble counters their Mishra's Bauble, flashbacked Lava Dart, Surgical. If they play Mystical Dispute / blue bounce, bring in your own Disputes (shave 2 Emperor of Bones). If you show Pyroclasm G2 or they Surgical you, swap Pyroclasm for Dispute G3 on the play (keep Pyroclasm in on the draw). Every life point matters — minimize fetch loss.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Eldrazi Tron -->
+<div class="mu">
+  <div class="mu-head" onclick="this.parentElement.classList.toggle('open')">
+    <span class="mu-name">vs. Eldrazi Tron</span><span class="chev">&#9660;</span>
+  </div>
+  <div class="mu-body">
+    <div class="gc">
+      <div class="gc-head"><span class="gc-author jpa">JPA</span></div>
+      <div class="gc-cols">
+        <div class="col-in"><div class="col-head">IN</div>
+          <div class="c in"><span class="qi">4</span>Consign to Memory</div>
+          <div class="c in"><span class="qi">2</span>Meltdown</div>
+          <div class="c in"><span class="qi">2</span>Damping Sphere</div>
+        </div>
+        <div class="col-out"><div class="col-head">OUT</div>
+          <div class="c out"><span class="q">4</span>Fatal Push</div>
+          <div class="c out"><span class="q">2</span>Abhorrent Oculus</div>
+          <div class="c out"><span class="q">2</span>Unearth</div>
+        </div>
+      </div>
+      <div class="gc-note">Alternative on the draw: keep Fatal Push in for TKS/Fleshraker, board out the whole Oculus/Unearth package instead. Spell Pierce stays in for Kozilek's Command and Karn. Meltdown hits Chalice + Tormod's/Cage/Relic but won't hit your own Damping Spheres.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Affinity -->
+<div class="mu">
+  <div class="mu-head" onclick="this.parentElement.classList.toggle('open')">
+    <span class="mu-name">vs. Affinity</span><span class="chev">&#9660;</span>
+  </div>
+  <div class="mu-body">
+    <div class="gc">
+      <div class="gc-head"><span class="gc-author jpa">JPA</span></div>
+      <div class="gc-cols">
+        <div class="col-in"><div class="col-head">IN</div>
+          <div class="c in"><span class="qi">2</span>Mystical Dispute</div>
+          <div class="c in"><span class="qi">2</span>Meltdown</div>
+          <div class="c in"><span class="qi">2</span>Vexing Bauble</div>
+        </div>
+        <div class="col-out"><div class="col-head">OUT</div>
+          <div class="c out"><span class="q">4</span>Fatal Push</div>
+          <div class="c out"><span class="q">1</span>Abhorrent Oculus</div>
+          <div class="c out"><span class="q">1</span>Unearth</div>
+        </div>
+      </div>
+      <div class="gc-note">Play/draw dependent. Most lists run multiple Tormod's Crypt main. Alt: leave some Fatal Pushes in (esp. on the draw), board out Spell Pierces or Thoughtseizes for more Emry/Ravager answers — but JPA prefers Archon for removal. Spell Pierce can fight through their disruption (they usually can't leave up Rebuke/Sink AND 2 extra mana). Vexing Bauble gets hit by your own Meltdown but still powerful — hits Surgical and Force of Negation. If you really hate Oculus here, cut all Oculi/Unearths, bring in Consign, leave in Fatal Pushes.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Amulet Titan -->
+<div class="mu">
+  <div class="mu-head" onclick="this.parentElement.classList.toggle('open')">
+    <span class="mu-name">vs. Amulet Titan</span><span class="chev">&#9660;</span>
+  </div>
+  <div class="mu-body">
+    <div class="gc">
+      <div class="gc-head"><span class="gc-author jpa">JPA</span></div>
+      <div class="gc-cols">
+        <div class="col-in"><div class="col-head">IN</div>
+          <div class="c in"><span class="qi">4</span>Consign to Memory</div>
+          <div class="c in"><span class="qi">1</span>Surgical Extraction</div>
+          <div class="c in"><span class="qi">2</span>Meltdown</div>
+          <div class="c in"><span class="qi">2</span>Damping Sphere</div>
+        </div>
+        <div class="col-out"><div class="col-head">OUT</div>
+          <div class="c out"><span class="q">1</span>Fatal Push</div>
+          <div class="c out"><span class="q">4</span>Unearth</div>
+          <div class="c out"><span class="q">4</span>Abhorrent Oculus</div>
+        </div>
+      </div>
+      <div class="gc-note">Could cut all Fatal Pushes and leave some Oculus/Unearth, but Fatal Push lines up better here — kills Six, Tireless Tracker, Arboreal Grazer (to clear way for Archon triggers vs. Prime Time), and breaks Aftermath Analyst lines. Good matchup overall — you have all the tools.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Yawgmoth -->
+<div class="mu">
+  <div class="mu-head" onclick="this.parentElement.classList.toggle('open')">
+    <span class="mu-name">vs. Yawgmoth</span><span class="chev">&#9660;</span>
+  </div>
+  <div class="mu-body">
+    <div class="gc">
+      <div class="gc-head"><span class="gc-author jpa">JPA</span></div>
+      <div class="gc-cols">
+        <div class="col-in"><div class="col-head">IN</div>
+          <div class="c in"><span class="qi">2</span>Pyroclasm</div>
+          <div class="c in"><span class="qi">1</span>Surgical Extraction</div>
+          <div class="c in"><span class="qi">2-4</span>Consign to Memory</div>
+        </div>
+        <div class="col-out"><div class="col-head">OUT</div>
+          <div class="c out">A combination of Abhorrent Oculus and Unearth</div>
+          <div class="c out" style="color:#888;font-style:italic">(depends on how many Consigns you bring in)</div>
+        </div>
+      </div>
+      <div class="gc-note">Gets harder the more Agatha's Soul Cauldron they run (some lists 4, some Birthing Ritual variants 0). Spell Pierce stays — hits both Cauldron and Birthing Ritual. 2 Consign is a solid hedge when unsure of their config. Consign also counters Grist's -2 (after sacrifice). Meltdown not worth it for Cauldron unless they also bring artifact graveyard hate — Consign hits those too.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Esper Blink -->
+<div class="mu">
+  <div class="mu-head" onclick="this.parentElement.classList.toggle('open')">
+    <span class="mu-name">vs. Esper Blink</span><span class="chev">&#9660;</span>
+  </div>
+  <div class="mu-body">
+    <div class="gc">
+      <div class="gc-head"><span class="gc-author jpa">JPA</span></div>
+      <div class="gc-cols">
+        <div class="col-in"><div class="col-head">IN</div>
+          <div class="c in"><span class="qi">2</span>Mystical Dispute</div>
+        </div>
+        <div class="col-out"><div class="col-head">OUT</div>
+          <div class="c out"><span class="q">2</span>Faithless Looting</div>
+        </div>
+      </div>
+      <div class="gc-note">Spell Pierce stays in for Teferi (also fine vs. Ephemerate). They have their own Emperor of Bones — makes Looting worse two ways: they can exile it with Emperor, and (much more relevant) they can eat and use YOUR Archon if you discard it. Vexing Bauble vs. Solitude probably not good enough unless they have additional targets. Tough matchup — careful piloting + hope they miss Solitudes.</div>
+    </div>
+  </div>
+</div>
+
+<!-- UWx Control -->
+<div class="mu">
+  <div class="mu-head" onclick="this.parentElement.classList.toggle('open')">
+    <span class="mu-name">vs. UWx Control</span><span class="chev">&#9660;</span>
+  </div>
+  <div class="mu-body">
+    <div class="gc">
+      <div class="gc-head"><span class="gc-author jpa">JPA</span></div>
+      <div class="gc-cols">
+        <div class="col-in"><div class="col-head">IN</div>
+          <div class="c in"><span class="qi">2</span>Mystical Dispute</div>
+          <div class="c in"><span class="qi">2</span>Vexing Bauble</div>
+        </div>
+        <div class="col-out"><div class="col-head">OUT</div>
+          <div class="c out"><span class="q">4</span>Fatal Push</div>
+        </div>
+      </div>
+      <div class="gc-note">Better than expected in practice. Don't overextend into sweepers — value game with a single Frog they have to remove. Keep pressure on, they won't have time to accrue advantage. Lists are in flux — adjust accordingly. Vexing Bauble stops alt-cost Solitude/FoN. If they play Wan Shi Tong, consider Consign to Memory (also "counters" Solitude) or Fatal Push instead.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Living End -->
+<div class="mu">
+  <div class="mu-head" onclick="this.parentElement.classList.toggle('open')">
+    <span class="mu-name">vs. Living End</span><span class="chev">&#9660;</span>
+  </div>
+  <div class="mu-body">
+    <div class="gc">
+      <div class="gc-head"><span class="gc-author jpa">JPA</span></div>
+      <div class="gc-cols">
+        <div class="col-in"><div class="col-head">IN</div>
+          <div class="c in"><span class="qi">2</span>Vexing Bauble</div>
+          <div class="c in"><span class="qi">2</span>Mystical Dispute</div>
+          <div class="c in"><span class="qi">4</span>Consign to Memory</div>
+        </div>
+        <div class="col-out"><div class="col-head">OUT</div>
+          <div class="c out"><span class="q">4</span>Fatal Push</div>
+          <div class="c out"><span class="q">2</span>Unearth</div>
+          <div class="c out"><span class="q">2</span>Abhorrent Oculus</div>
+        </div>
+      </div>
+      <div class="gc-note">Tougher than Rhinos due to more potent cascade payoff + 4 maindeck Endurance. Postboard probably swings your way. Mystical Dispute is great vs. Teferi (otherwise very annoying). One upside: they usually need Endurance IN ADDITION to their combo, since your graveyard fillers trump most Living End resolutions.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Rhinos -->
+<div class="mu">
+  <div class="mu-head" onclick="this.parentElement.classList.toggle('open')">
+    <span class="mu-name">vs. Rhinos</span><span class="chev">&#9660;</span>
+  </div>
+  <div class="mu-body">
+    <div class="gc">
+      <div class="gc-head"><span class="gc-author jpa">JPA</span></div>
+      <div class="gc-cols">
+        <div class="col-in"><div class="col-head">IN</div>
+          <div class="c in"><span class="qi">2</span>Vexing Bauble</div>
+          <div class="c in"><span class="qi">2</span>Mystical Dispute</div>
+        </div>
+        <div class="col-out"><div class="col-head">OUT</div>
+          <div class="c out"><span class="q">4</span>Fatal Push</div>
+        </div>
+      </div>
+      <div class="gc-note">Bauble is huge — counters Crashing Footfalls but also disrupts Endurance/Subtlety. Good matchup: all your creatures bigger than rhinos, so they need to remove/bounce AND resolve Footfalls. Dispute counters their Disputes/FoN, also good vs. Petty Theft/Subtlety/Inevitable Betrayal. Consign to Memory not worth it here unless they swap Footfalls for Betrayal or run 4 Endurance — then shave Oculus/Unearth.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Burn -->
+<div class="mu">
+  <div class="mu-head" onclick="this.parentElement.classList.toggle('open')">
+    <span class="mu-name">vs. Burn</span><span class="chev">&#9660;</span>
+  </div>
+  <div class="mu-body">
+    <div class="gc">
+      <div class="gc-head"><span class="gc-author jpa">JPA</span></div>
+      <div class="gc-cols">
+        <div class="col-in"><div class="col-head">IN</div>
+          <div class="c in"><span class="qi">2</span>Pyroclasm</div>
+          <div class="c in"><span class="qi">2</span>Vexing Bauble</div>
+        </div>
+        <div class="col-out"><div class="col-head">OUT</div>
+          <div class="c out"><span class="q">4</span>Thoughtseize</div>
+        </div>
+      </div>
+      <div class="gc-note">Burn is back after the B&amp;R update — another excellent matchup. Bauble only counters Rift Bolt but you can always cycle it, and it keeps your reanimation safe from Surgical while they're tapped out.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Ruby Storm -->
+<div class="mu">
+  <div class="mu-head" onclick="this.parentElement.classList.toggle('open')">
+    <span class="mu-name">vs. Ruby Storm</span><span class="chev">&#9660;</span>
+  </div>
+  <div class="mu-body">
+    <div class="gc">
+      <div class="gc-head"><span class="gc-author jpa">JPA</span></div>
+      <div class="gc-cols">
+        <div class="col-in"><div class="col-head">IN</div>
+          <div class="c in"><span class="qi">4</span>Consign to Memory</div>
+          <div class="c in"><span class="qi">2</span>Damping Sphere</div>
+          <div class="c in"><span class="qi">1</span>Surgical Extraction</div>
+        </div>
+        <div class="col-out"><div class="col-head">OUT</div>
+          <div class="c out"><span class="q">4</span>Abhorrent Oculus</div>
+          <div class="c out"><span class="q">3</span>Unearth</div>
+        </div>
+      </div>
+      <div class="gc-note">Could bring in 1 Vexing Bauble for the 4th Unearth — corner-case stops Ral's ultimate, but also turns off your own Surgical. Oculus is a good clock but JPA prefers Archon / riding Frog. Damping Sphere is your best card here. Good matchup.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Goryo's -->
+<div class="mu">
+  <div class="mu-head" onclick="this.parentElement.classList.toggle('open')">
+    <span class="mu-name">vs. Goryo's</span><span class="chev">&#9660;</span>
+  </div>
+  <div class="mu-body">
+    <div class="gc">
+      <div class="gc-head"><span class="gc-author jpa">JPA</span></div>
+      <div class="gc-sub">On the play</div>
+      <div class="gc-cols">
+        <div class="col-in"><div class="col-head">IN</div>
+          <div class="c in"><span class="qi">1</span>Surgical Extraction</div>
+          <div class="c in"><span class="qi">2</span>Mystical Dispute</div>
+        </div>
+        <div class="col-out"><div class="col-head">OUT</div>
+          <div class="c out"><span class="q">1</span>Abhorrent Oculus</div>
+          <div class="c out"><span class="q">2</span>Faithless Looting</div>
+        </div>
+      </div>
+      <div class="gc-sub">On the draw</div>
+      <div class="gc-cols">
+        <div class="col-in"><div class="col-head">IN</div>
+          <div class="c in"><span class="qi">1</span>Surgical Extraction</div>
+          <div class="c in"><span class="qi">2</span>Mystical Dispute</div>
+        </div>
+        <div class="col-out"><div class="col-head">OUT</div>
+          <div class="c out"><span class="q">2</span>Abhorrent Oculus</div>
+          <div class="c out"><span class="q">1</span>Faithless Looting</div>
+        </div>
+      </div>
+      <div class="gc-note">Vexing Bauble option, but they can cast their Surgical for mana instead, and it affects your own Surgical. Still relevant vs. Solitude/FoN. Play with Oculus/Looting numbers — even though they don't have Emperor of Bones (making Looting better), you might want all Oculi in to overload Solitudes. Unearth also a board-out candidate since their removal mostly exiles. Tough/close — their Atraxa draws usually trump your Archon ones.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Gx Broodscale -->
+<div class="mu">
+  <div class="mu-head" onclick="this.parentElement.classList.toggle('open')">
+    <span class="mu-name">vs. Gx Broodscale</span><span class="chev">&#9660;</span>
+  </div>
+  <div class="mu-body">
+    <div class="gc">
+      <div class="gc-head"><span class="gc-author jpa">JPA</span></div>
+      <div class="gc-cols">
+        <div class="col-in"><div class="col-head">IN</div>
+          <div class="c in"><span class="qi">4</span>Consign to Memory</div>
+          <div class="c in"><span class="qi">2</span>Meltdown</div>
+          <div class="c in"><span class="qi">2</span>Pyroclasm</div>
+        </div>
+        <div class="col-out"><div class="col-head">OUT</div>
+          <div class="c out"><span class="q">4</span>Abhorrent Oculus</div>
+          <div class="c out"><span class="q">4</span>Unearth</div>
+        </div>
+      </div>
+      <div class="gc-note">Rising archetype, probably better matchup than Eldrazi Tron (which is already positive). Still play carefully — they can win out of nowhere — but you have all the tools.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Grixis Reanimator mirror -->
+<div class="mu">
+  <div class="mu-head" onclick="this.parentElement.classList.toggle('open')">
+    <span class="mu-name">vs. Grixis Reanimator (mirror)</span><span class="chev">&#9660;</span>
+  </div>
+  <div class="mu-body">
+    <div class="gc">
+      <div class="gc-head"><span class="gc-author jpa">JPA</span></div>
+      <div class="gc-cols">
+        <div class="col-in"><div class="col-head">IN</div>
+          <div class="c in"><span class="qi">2</span>Mystical Dispute</div>
+          <div class="c in"><span class="qi">1</span>Surgical Extraction</div>
+        </div>
+        <div class="col-out"><div class="col-head">OUT</div>
+          <div class="c out"><span class="q">3</span>Faithless Looting</div>
+        </div>
+      </div>
+      <div class="gc-note">Same Looting concern as vs. Esper Blink — they're dangerous, you don't want the card disadvantage. Usually a grindfest — DON'T assume your Archon resolving first wins the game. Their Archon is a great answer to yours. Emperor of Bones should be Fatal Pushed on sight — don't let it sit and wait for an activation, opponents usually won't play into that.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Neobrand -->
+<div class="mu">
+  <div class="mu-head" onclick="this.parentElement.classList.toggle('open')">
+    <span class="mu-name">vs. Neobrand</span><span class="chev">&#9660;</span>
+  </div>
+  <div class="mu-body">
+    <div class="gc">
+      <div class="gc-head"><span class="gc-author jpa">JPA</span></div>
+      <div class="gc-cols">
+        <div class="col-in"><div class="col-head">IN</div>
+          <div class="c in"><span class="qi">2</span>Mystical Dispute</div>
+          <div class="c in"><span class="qi">2</span>Vexing Bauble</div>
+          <div class="c in"><span class="qi">2</span>Damping Sphere</div>
+        </div>
+        <div class="col-out"><div class="col-head">OUT</div>
+          <div class="c out"><span class="q">4</span>Fatal Push</div>
+          <div class="c out"><span class="q">2</span>Unearth</div>
+        </div>
+      </div>
+      <div class="gc-note">Veil of Summer is their best card vs. you (also helps around Bauble countering Allosaurus Rider). Damping Sphere makes Veil harder to use on a combo turn. Even if Neoform/Eldritch Evolution resolves, you can still win with Archon — especially hasty double-trigger from Emperor of Bones. Sometimes you can Thoughtseize a fatty and reanimate it with Emperor (nasty w/ Ghalta + Archon in hand). From the Neobrand side, Grixis Reanimator is scary — firmly your matchup.</div>
+    </div>
+  </div>
+</div>
+
+<!-- UG(b) Ritual -->
+<div class="mu">
+  <div class="mu-head" onclick="this.parentElement.classList.toggle('open')">
+    <span class="mu-name">vs. UG(b) Ritual</span><span class="chev">&#9660;</span>
+  </div>
+  <div class="mu-body">
+    <div class="gc">
+      <div class="gc-head"><span class="gc-author jpa">JPA</span></div>
+      <div class="gc-cols">
+        <div class="col-in"><div class="col-head">IN</div>
+          <div class="c in"><span class="qi">2</span>Vexing Bauble</div>
+          <div class="c in"><span class="qi">2</span>Mystical Dispute</div>
+        </div>
+        <div class="col-out"><div class="col-head">OUT</div>
+          <div class="c out"><span class="q">2</span>Faithless Looting</div>
+          <div class="c out"><span class="q">2</span>Abhorrent Oculus <span style="color:#888;font-style:italic">or</span> 2 Emperor of Bones</div>
+        </div>
+      </div>
+      <div class="gc-note">Could also cut 1 Oculus + 1 Emperor, or 2 each instead of the Lootings. Maybe keep Looting on the draw where card disadvantage matters less, but 2 is probably the right number to leave in. Bauble hits Evoke creatures (Subtlety/Endurance) + free counters (FoN/Flare of Denial). Harbinger of the Seas can lock out Faithless Looting regardless of lands — fetch a basic Swamp to weaken it. Don't overextend into Culling Ritual.</div>
+    </div>
+  </div>
+</div>
+
+<!-- RW Land Destruction -->
+<div class="mu">
+  <div class="mu-head" onclick="this.parentElement.classList.toggle('open')">
+    <span class="mu-name">vs. RW Land Destruction</span><span class="chev">&#9660;</span>
+  </div>
+  <div class="mu-body">
+    <div class="gc">
+      <div class="gc-head"><span class="gc-author jpa">JPA</span></div>
+      <div class="gc-cols">
+        <div class="col-in"><div class="col-head">IN</div>
+          <div class="c in"><span class="qi">2</span>Vexing Bauble</div>
+          <div class="c in"><span class="qi">2</span>Consign to Memory</div>
+        </div>
+        <div class="col-out"><div class="col-head">OUT</div>
+          <div class="c out"><span class="q">4</span>Fatal Push</div>
+        </div>
+      </div>
+      <div class="gc-note">Unpleasant matchup. Curve low enough that LD doesn't really hit until late game, but lots of spot removal + sweepers. Prefer them Eroding your creature over Path — Eroded creature can be reanimated. Mana Tithe threat is annoying / gets in your head. Their best SB card is Rest in Peace — keep Spell Pierce ready. If willing to hold 3 mana for Cancel, consider Dispute over Consign. Consign upside: counters Emperor of Bones' delayed sac trigger, potentially saves an Archon. Jam creatures and hope.</div>
+    </div>
+  </div>
+</div>
+
+<div style="padding: 18px 16px; font-size: 12px; color: #777; line-height: 1.6; border-top: 1px solid #222;">
+  <div style="font-weight: 700; color: #b070a0; margin-bottom: 6px;">Final Thoughts (JPA)</div>
+  Core cards never boarded out: <span style="color:#b8e8c8">Psychic Frog, Archon of Cruelty, Persist, Thought Scour</span>. A T2 Archon/Frog is too powerful to mitigate in any matchup. Thought Scour fuels everything, is an instant (keeps up Consign/Push), and is the only card that lets you combo with nothing in hand/yard: mill Archon → draw Persist (3 mana), or Scour + Unearth Oculus (2 mana).
+</div>
+
+<div style="padding: 14px 16px; font-size: 11px; color: #555; border-top: 1px solid #222;">
+  Ale (Alejandro Mora) guide: mtgdecks.net blocked direct fetch — paste it in and I'll integrate.
+</div>
+
+</body>
+</html>
