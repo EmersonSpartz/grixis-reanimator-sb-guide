@@ -1,0 +1,14 @@
+{
+    "type": "generic",
+    "verify_command": "./verify.sh",
+    "test_after_edit": "",
+    "critical_files": [],
+    "review_checklist": [
+        "Run the main user flow end-to-end — does it complete without errors?",
+        "Read the actual output — would Emerson immediately see something wrong?",
+        "Trace one data path end-to-end: input → processing → output",
+        "Test at realistic scale (not toy inputs)",
+        "Verify output actually exists (files on disk, DB records written)"
+    ],
+    "notes": []
+}

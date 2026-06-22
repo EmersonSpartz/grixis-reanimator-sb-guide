@@ -23,6 +23,13 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .gc-author { font-size: 12px; font-weight: 600; color: #7090a0; }
 .gc-author.jpa { color: #b070a0; }
 .gc-author.ale { color: #50b090; }
+.gc-author.beefy { color: #d4a040; }
+.diff { font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 3px; letter-spacing: 0.5px; margin-left: auto; }
+.diff.very_easy { background: #1a3a2a; color: #6ad48b; }
+.diff.easy { background: #1a2e3a; color: #6ab0d4; }
+.diff.medium { background: #3a3a1a; color: #d4c46a; }
+.diff.hard { background: #3a2a1a; color: #d49460; }
+.diff.very_hard { background: #3a1a1a; color: #e07070; }
 .gc-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 9px 11px; }
 .col-head { font-size: 10px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 5px; }
 .col-in .col-head { color: #4caf6b; }
@@ -39,7 +46,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 <body>
 <div class="top-bar">
   <h1>Grixis Reanimator SB Guide</h1>
-  <div class="subtitle">JPA / Ale (Alejandro Mora)</div>
+  <div class="subtitle">JPA / BEEFYGG / Ale (Alejandro Mora)</div>
 </div>
 
 <!-- Boros/Mardu Energy -->
@@ -48,6 +55,33 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
     <span class="mu-name">vs. Boros / Mardu Energy</span><span class="chev">&#9660;</span>
   </div>
   <div class="mu-body">
+    <div class="gc">
+      <div class="gc-head"><span class="gc-author beefy">BEEFYGG</span><span class="diff easy">EASY</span></div>
+      <div class="gc-sub">On the play</div>
+      <div class="gc-cols">
+        <div class="col-in"><div class="col-head">IN</div>
+          <div class="c in"><span class="qi">2</span>Fire Magic</div>
+          <div class="c in"><span class="qi">2</span>Harbinger of the Seas</div>
+        </div>
+        <div class="col-out"><div class="col-head">OUT</div>
+          <div class="c out"><span class="q">2</span>Faithless Looting</div>
+          <div class="c out"><span class="q">1</span>Otherworldly Gaze</div>
+          <div class="c out"><span class="q">1</span>Thoughtseize</div>
+        </div>
+      </div>
+      <div class="gc-sub">On the draw</div>
+      <div class="gc-cols">
+        <div class="col-in"><div class="col-head">IN</div>
+          <div class="c in"><span class="qi">2</span>Fire Magic</div>
+        </div>
+        <div class="col-out"><div class="col-head">OUT</div>
+          <div class="c out"><span class="q">1</span>Otherworldly Gaze</div>
+          <div class="c out"><span class="q">1</span>Thoughtseize</div>
+        </div>
+      </div>
+      <div class="gc-note">Got better after the Phlage bans — no more scary 12-damage-out-of-nowhere. As long as you get a decent threat on board, drag them down. On the play sometimes Frog alone is enough since Ragavan/Ocelot don't get a turn to hit you while you set up. G1 all-in on reanimating anything to steal. G2/G3 you can fight on board with Frog or hardcast Oculus as they bring hate. Some are running Rest in Peace — if it continues, room for Feed the Swarm.</div>
+    </div>
+
     <div class="gc">
       <div class="gc-head"><span class="gc-author jpa">JPA</span></div>
       <div class="gc-cols">
@@ -96,6 +130,34 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
   </div>
   <div class="mu-body">
     <div class="gc">
+      <div class="gc-head"><span class="gc-author beefy">BEEFYGG</span><span class="diff very_easy">VERY EASY</span></div>
+      <div class="gc-sub">On the play</div>
+      <div class="gc-cols">
+        <div class="col-in"><div class="col-head">IN</div>
+          <div class="c in"><span class="qi">2</span>Harbinger of the Seas</div>
+          <div class="c in"><span class="qi">2</span>Mai, Scornful Striker</div>
+          <div class="c in"><span class="qi">2</span>Vexing Bauble</div>
+        </div>
+        <div class="col-out"><div class="col-head">OUT</div>
+          <div class="c out"><span class="q">1</span>Otherworldly Gaze</div>
+          <div class="c out"><span class="q">4</span>Thoughtseize</div>
+          <div class="c out"><span class="q">1</span>Unearth</div>
+        </div>
+      </div>
+      <div class="gc-sub">On the draw</div>
+      <div class="gc-cols">
+        <div class="col-in"><div class="col-head">IN</div>
+          <div class="c in"><span class="qi">2</span>Mai, Scornful Striker</div>
+          <div class="c in"><span class="qi">2</span>Vexing Bauble</div>
+        </div>
+        <div class="col-out"><div class="col-head">OUT</div>
+          <div class="c out"><span class="q">4</span>Thoughtseize</div>
+        </div>
+      </div>
+      <div class="gc-note">ARCHON WINS! FLAWLESS VICTORY! If you get an Archon back, very unlikely they win even post-side. Classic "play big threat, win." If Prowess has to waste spells trading off your creatures, they're in for a long game — force them. Keep life total safe. If you have Oculus on board and they have multiple cards in hand, hold it back and slowly make tokens to not get caught by a surprise Slickshot Show-Off. Once you put down a big threat you can let up and grind them out. Archon doesn't need to defend — the stapled lightning helix means he buries opponents in one swing.</div>
+    </div>
+
+    <div class="gc">
       <div class="gc-head"><span class="gc-author jpa">JPA</span></div>
       <div class="gc-cols">
         <div class="col-in"><div class="col-head">IN</div>
@@ -117,6 +179,26 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
     <span class="mu-name">vs. Eldrazi Tron</span><span class="chev">&#9660;</span>
   </div>
   <div class="mu-body">
+    <div class="gc">
+      <div class="gc-head"><span class="gc-author beefy">BEEFYGG</span><span class="diff medium">MEDIUM</span></div>
+      <div class="gc-cols">
+        <div class="col-in"><div class="col-head">IN</div>
+          <div class="c in"><span class="qi">3</span>Consign to Memory</div>
+          <div class="c in"><span class="qi">2</span>Fulminator Mage</div>
+          <div class="c in"><span class="qi">2</span>Harbinger of the Seas</div>
+          <div class="c in"><span class="qi">2</span>Meltdown</div>
+        </div>
+        <div class="col-out"><div class="col-head">OUT</div>
+          <div class="c out"><span class="q">1</span>Abhorrent Oculus</div>
+          <div class="c out"><span class="q">4</span>Fatal Push</div>
+          <div class="c out"><span class="q">1</span>Otherworldly Gaze</div>
+          <div class="c out"><span class="q">2</span>Spell Pierce</div>
+          <div class="c out"><span class="q">1</span>Unearth</div>
+        </div>
+      </div>
+      <div class="gc-note">Need to go fast — they go over the top of your best creatures. Need an early threat and pressure life total hard. Post-board, 1 big threat plus hate works; Consign is your best friend. Lucky Fulminator/Harbinger can stall them while you take them out with Frog or another big threat. Kozilek's Command is rough and can stop your reanimate targets. If you have a hate piece on top of reanimate, usually too much for them. Easy or rough based on how fast you get a threat.</div>
+    </div>
+
     <div class="gc">
       <div class="gc-head"><span class="gc-author jpa">JPA</span></div>
       <div class="gc-cols">
@@ -143,6 +225,37 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
   </div>
   <div class="mu-body">
     <div class="gc">
+      <div class="gc-head"><span class="gc-author beefy">BEEFYGG</span><span class="diff very_hard">VERY HARD</span></div>
+      <div class="gc-sub">On the play</div>
+      <div class="gc-cols">
+        <div class="col-in"><div class="col-head">IN</div>
+          <div class="c in"><span class="qi">2</span>Fire Magic</div>
+          <div class="c in"><span class="qi">2</span>Meltdown</div>
+          <div class="c in"><span class="qi">2</span>Vexing Bauble</div>
+        </div>
+        <div class="col-out"><div class="col-head">OUT</div>
+          <div class="c out"><span class="q">4</span>Faithless Looting</div>
+          <div class="c out"><span class="q">1</span>Otherworldly Gaze</div>
+          <div class="c out"><span class="q">1</span>Unearth</div>
+        </div>
+      </div>
+      <div class="gc-sub">On the draw</div>
+      <div class="gc-cols">
+        <div class="col-in"><div class="col-head">IN</div>
+          <div class="c in"><span class="qi">2</span>Fire Magic</div>
+          <div class="c in"><span class="qi">2</span>Meltdown</div>
+          <div class="c in"><span class="qi">2</span>Vexing Bauble</div>
+        </div>
+        <div class="col-out"><div class="col-head">OUT</div>
+          <div class="c out"><span class="q">1</span>Faithless Looting</div>
+          <div class="c out"><span class="q">1</span>Otherworldly Gaze</div>
+          <div class="c out"><span class="q">4</span>Thoughtseize</div>
+        </div>
+      </div>
+      <div class="gc-note">"If you are reading this you are already dead!" Horrible matchup — they go fast and have free main deck hate. Post-side, get early threats through the hate and keep them off Kappa. Once the turtle is down it's usually over. Not impossible but ONLY keep the best hands — turn 2 reanimate, or so much hate they stall while you develop.</div>
+    </div>
+
+    <div class="gc">
       <div class="gc-head"><span class="gc-author jpa">JPA</span></div>
       <div class="gc-cols">
         <div class="col-in"><div class="col-head">IN</div>
@@ -167,6 +280,26 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
     <span class="mu-name">vs. Amulet Titan</span><span class="chev">&#9660;</span>
   </div>
   <div class="mu-body">
+    <div class="gc">
+      <div class="gc-head"><span class="gc-author beefy">BEEFYGG</span><span class="diff medium">MEDIUM</span></div>
+      <div class="gc-cols">
+        <div class="col-in"><div class="col-head">IN</div>
+          <div class="c in"><span class="qi">3</span>Consign to Memory</div>
+          <div class="c in"><span class="qi">2</span>Fulminator Mage</div>
+          <div class="c in"><span class="qi">2</span>Harbinger of the Seas</div>
+          <div class="c in"><span class="qi">2</span>Vexing Bauble</div>
+        </div>
+        <div class="col-out"><div class="col-head">OUT</div>
+          <div class="c out"><span class="q">2</span>Faithless Looting</div>
+          <div class="c out"><span class="q">4</span>Fatal Push</div>
+          <div class="c out"><span class="q">1</span>Otherworldly Gaze</div>
+          <div class="c out"><span class="q">1</span>Thoughtseize</div>
+          <div class="c out"><span class="q">1</span>Unearth</div>
+        </div>
+      </div>
+      <div class="gc-note">Heavy sideboard angle. Stifle them — bringing back Archon or Oculus alone won't win, they'll combo your face off. Bring in ALL the hate, play slower grindy game. T2 Archon + hate is the dream. Worst case slow them down and keep them off Titan until too late. Focus on THEIR plays not yours: given a choice between bringing back a threat OR stopping an untap effect, always stop the next play if you have any threat on board. Harbinger makes it easier to soft-lock by turn 2-3. But don't hard mulligan to it — they run 3 Dismember. Lotus Field hit was great for tempo.</div>
+    </div>
+
     <div class="gc">
       <div class="gc-head"><span class="gc-author jpa">JPA</span></div>
       <div class="gc-cols">
@@ -330,6 +463,22 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
   </div>
   <div class="mu-body">
     <div class="gc">
+      <div class="gc-head"><span class="gc-author beefy">BEEFYGG</span><span class="diff medium">MEDIUM</span></div>
+      <div class="gc-cols">
+        <div class="col-in"><div class="col-head">IN</div>
+          <div class="c in"><span class="qi">3</span>Consign to Memory</div>
+          <div class="c in"><span class="qi">2</span>Mai, Scornful Striker</div>
+        </div>
+        <div class="col-out"><div class="col-head">OUT</div>
+          <div class="c out"><span class="q">2</span>Abhorrent Oculus</div>
+          <div class="c out"><span class="q">1</span>Otherworldly Gaze</div>
+          <div class="c out"><span class="q">2</span>Unearth</div>
+        </div>
+      </div>
+      <div class="gc-note">Not about reanimating fastest — about a fast threat + holding up hate. Mai is a great pressure piece while they look for an answer. Consign + Spell Pierce stop the medallion / artist talent. Fatal Pushes are for Ral. Answer every reducer — doesn't matter how fast your clock is if you have no interaction. Mulligan for interaction + 1 decent threat (Frog, Mai) OR a fast reanimate that lets you keep up interaction. Play this matchup to NOT LOSE.</div>
+    </div>
+
+    <div class="gc">
       <div class="gc-head"><span class="gc-author jpa">JPA</span></div>
       <div class="gc-cols">
         <div class="col-in"><div class="col-head">IN</div>
@@ -353,6 +502,23 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
     <span class="mu-name">vs. Goryo's</span><span class="chev">&#9660;</span>
   </div>
   <div class="mu-body">
+    <div class="gc">
+      <div class="gc-head"><span class="gc-author beefy">BEEFYGG</span><span class="diff hard">HARD</span></div>
+      <div class="gc-cols">
+        <div class="col-in"><div class="col-head">IN</div>
+          <div class="c in"><span class="qi">2</span>Consign to Memory</div>
+          <div class="c in"><span class="qi">2</span>Vexing Bauble</div>
+        </div>
+        <div class="col-out"><div class="col-head">OUT</div>
+          <div class="c out"><span class="q">1</span>Abhorrent Oculus</div>
+          <div class="c out"><span class="q">1</span>Faithless Looting</div>
+          <div class="c out"><span class="q">1</span>Otherworldly Gaze</div>
+          <div class="c out"><span class="q">1</span>Unearth</div>
+        </div>
+      </div>
+      <div class="gc-note">Rough due to free spells like Solitude and Force of Negation. Goal: reanimate a threat while pressuring them. Emperor of Bones is your friend — but can bite you (they have it too). DO NOT put an Archon in graveyard with no way to bring it back — they can use it. Play safe and fight to be first to bring out a big threat, then ride it to victory with backup. Thoughtseize is great to clear the way or protect your threats.</div>
+    </div>
+
     <div class="gc">
       <div class="gc-head"><span class="gc-author jpa">JPA</span></div>
       <div class="gc-sub">On the play</div>
