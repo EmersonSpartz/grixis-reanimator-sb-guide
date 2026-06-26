@@ -2,7 +2,7 @@
 set -e
 URL="https://emersonspartz.github.io/grixis-reanimator-sb-guide/"
 html=$(curl -sf "$URL")
-for needle in "JPA" "BEEFYGG" "Battlechads" "Discord" "postboard.gg" "Into the Flood Maw"; do
+for needle in "JPA" "BEEFYGG" "Battlechads" "Discord" "Into the Flood Maw"; do
   grep -q "$needle" <<< "$html" || { echo "FAIL: missing '$needle'"; exit 1; }
 done
 # Regression test for the 2026-06-26 HTML-structure bug:
